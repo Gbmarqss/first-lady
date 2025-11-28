@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Lady</title>
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="hero" id="hero-carousel">
+        
+        <!-- CodePen Style Player (JavaScriptJunkie inspired) -->
+        <div class="player-card">
+            <div class="player-img">
+                <img src="img/capa1.jpg" alt="Nossa Foto" id="player-cover">
+            </div>
+            <div class="player-details">
+                <h2 class="song-title">Ela une todas as coisas</h2>
+                <h3 class="artist-name">Jorge Versillo</h3>
+            </div>
+            <div class="player-controls">
+                <div class="time-bar">
+                    <div class="progress" id="progress-bar"></div>
+                </div>
+                <div class="buttons">
+                    <button class="btn-control prev" id="prev-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                    </button>
+                    <button class="btn-control play" id="play-pause-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="pause-icon" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <button class="btn-control next" id="next-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Audio Element -->
+        <audio id="bg-music" loop>
+            <source src="musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+       <div class="overlay reveal" id="main-overlay">
+    <h1>Melzudin & Advogata</h1>
+    <p class="subtitle">Desde o dia em que decidi não demitir a secretária...</p>
+    <div id="contador">Calculando nossa timeline...</div>
+</div>
+    </header>
+
+    <section class="jim-quote reveal">
+        <div class="quote-container">
+            <blockquote>
+                "For a long time that's all I had. Little moments with a girl who saw me as a friend. And a lot of people
+                told me I was crazy to wait this long for a date with a girl who I worked with, but I think, even then I
+                knew, I was waiting for my wife."
+            </blockquote>
+            <cite>- Jim Halpert (Season 9)</cite>
+        </div>
+    </section>
+
+    <section class="dundies reveal">
+        <h2>🏆 The Dundie Awards 🏆</h2>
+        <div class="awards-grid">
+            <div class="award-card">
+                <h3>Melhor Sorriso</h3>
+                <p>Categoria: Iluminação de Ambientes</p>
+            </div>
+            <div class="award-card">
+                <h3>Namorida do Ano</h3>
+                <p>Categoria: Futura Advogata</p>
+            </div>
+            <div class="award-card">
+                <h3>Musa do Café</h3>
+                <p>Categoria: Vício Compartilhado</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery reveal">
+        <h2>📸 Através da Sua Lente</h2>
+        <div class="polaroid-grid" id="polaroid-stack">
+            <div class="polaroid active">
+                <img src="img/foto1.jpg" alt="Nós dois">
+                <p>Minha Padmé</p>
+            </div>
+            <div class="polaroid next">
+                <img src="img/foto2.jpg" alt="Café">
+                <p>Minha Constante❤</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/foto3.jpg" alt="Café">
+                <p>Primeira Dama da Comunicação!</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/capa1.jpg" alt="Capa">
+                <p>Nossa Trilha Sonora 🎶</p>
+            </div>
+            <div class="polaroid">
+                <img src="img/favicon.jpg" alt="Mini">
+                <p>Mini Advogata ⚖️</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="reveal">
+        <p>Feito com amor, café e código pelo seu Melzudin.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
