@@ -3,65 +3,96 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Lady</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>First Lady | Melzudin & Advogata</title>
+    
+    <meta property="og:title" content="Para minha Primeira Dama ⭐">
+    <meta property="og:description" content="Um pedacinho da internet reservado para a Advogata mais linda.">
+    <meta property="og:image" content="https://gabriel.github.io/first-lady/img/capa1.jpg">
+    <meta name="theme-color" content="#d4af37">
+
     <link rel="icon" href="img/favicon.jpg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600;700&family=Special+Elite&family=Courier+New&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <header class="hero" id="hero-carousel">
         
-        <!-- CodePen Style Player (JavaScriptJunkie inspired) -->
         <div class="player-card">
-    <div class="player-details">
-        <h2 class="song-title">Ela une todas as coisas</h2>
-        <h3 class="artist-name">Jorge Versillo</h3>
-    </div>
-    <div class="player-controls">
-        <div class="time-bar" id="time-bar">
-            <div class="progress" id="progress-bar"></div>
+            <div class="player-details">
+                <h2 class="song-title">Ela une todas as coisas</h2>
+                <h3 class="artist-name">Jorge Vercillo</h3>
+            </div>
+            <div class="player-controls">
+                <div class="time-bar" id="time-bar">
+                    <div class="progress" id="progress-bar"></div>
+                </div>
+                <div class="buttons">
+                    <button class="btn-control prev" id="prev-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                    </button>
+                    <button class="btn-control play" id="play-pause-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="pause-icon" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <button class="btn-control next" id="next-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="buttons">
-            <button class="btn-control prev" id="prev-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-            </button>
-            <button class="btn-control play" id="play-pause-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon"><path d="M8 5v14l11-7z"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor" class="pause-icon" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-            </button>
-            <button class="btn-control next" id="next-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-            </button>
-        </div>
-    </div>
-</div>
 
-        <!-- Hidden Audio Element -->
         <audio id="bg-music" loop>
             <source src="musica.mp3" type="audio/mpeg">
-            Seu navegador não suporta o elemento de áudio.
         </audio>
 
-       <div class="overlay reveal" id="main-overlay">
-    <h1>Melzudin & Advogata</h1>
-    <p class="subtitle">Desde o dia em que decidi não demitir a secretária...</p>
-    <div id="contador">Calculando nossa timeline...</div>
-</div>
+        <div class="overlay reveal" id="main-overlay">
+            <h1>Melzudin & Advogata</h1>
+            
+            <div class="cargo-badge">
+                Primeira Dama da Comunicação 
+            </div>
+
+            <p class="subtitle">Desde o dia em que decidi não demitir a secretária...</p>
+            <div id="contador">Calculando nossa timeline...</div>
+        </div>
     </header>
 
     <section class="jim-quote reveal">
         <div class="quote-container">
             <blockquote>
-                "For a long time that's all I had. Little moments with a girl who saw me as a friend. And a lot of people
-                told me I was crazy to wait this long for a date with a girl who I worked with, but I think, even then I
-                knew, I was waiting for my wife."
+                "For a long time that's all I had. Little moments with a girl who saw me as a friend. And a lot of people told me I was crazy to wait this long for a date with a girl who I worked with, but I think, even then I knew, I was waiting for my wife."
             </blockquote>
             <cite>- Jim Halpert (Season 9)</cite>
+        </div>
+    </section>
+
+    <section cla
+ss="star-wars-quote reveal">
+        <div class="stars-bg"></div>
+        <div class="sw-content">
+            <blockquote>
+                "You are in my very soul, tormenting me... I am in agony. The closer I get to you, the worse it gets. The thought of not being with you—I can't breathe."
+            </blockquote>
+            <cite>- Anakin Skywalker</cite>
+        </div>
+    </section>
+
+    <section class="tropa-section reveal">
+        <div class="tropa-card">
+            <h2>🍯 Tropa do Mel 🍯</h2>
+            <p>Membros Fundadores & Vitalícios</p>
+            <div class="tropa-icones">
+                <span>🐻 Melzudin</span>
+                <span>❤️</span>
+                <span>👩‍⚖️ Advogata</span>
+            </div>
+            <p class="tropa-obs">*Acesso restrito: Proibido entrada de amargura.</p>
         </div>
     </section>
 
@@ -79,6 +110,28 @@
             <div class="award-card">
                 <h3>Musa do Café</h3>
                 <p>Categoria: Vício Compartilhado</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="f1-telemetry reveal">
+        <div class="telemetry-card">
+            <div class="rb-header">
+                <span class="rb-logo">🐂 Red Bull Racing Love</span>
+                <span class="rb-driver">VER 1</span>
+            </div>
+            <div class="telemetry-data">
+                <div class="stat-row">
+                    <span class="label">STATUS:</span>
+                    <span class="value p1">P1 (POLE POSITION)</span>
+                </div>
+                <div class="stat-row">
+                    <span class="label">BPM DO CORAÇÃO:</span>
+                    <span class="value">330 KM/H (DRS OPEN)</span>
+                </div>
+                <div class="stat-msg">
+                    <p>"Nem o Max Verstappen fazendo a pole em Suzuka faz meu coração acelerar tanto quanto ver uma notificação sua." 🏎️💨</p>
+                </div>
             </div>
         </div>
     </section>
@@ -109,11 +162,53 @@
         </div>
     </section>
 
+    <section class="dev-love reveal">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">melzudin@coracao:~</span>
+            </div>
+            <div class="terminal-body">
+                <p class="code-line">
+                    <span class="prompt">$</span> <span class="cmd">echo</span> "Declaração de Variáveis"
+                </p>
+                <p class="code-output">
+                    "Em um mundo cheio de <strong>variáveis</strong>, eu encontrei minha <strong>constante</strong>." ❤️
+                </p>
+                <br>
+                <p class="code-line">
+                    <span class="prompt">$</span> <span class="cmd">git</span> status
+                </p>
+                <p class="code-output">
+                    ⚠️ Warning: Você é um <strong>bug</strong> no meu código...<br>
+                    Porque passo todo o meu tempo tentando entender você (e admirando).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="declaracao-amor reveal">
+        <div class="papel-carta">
+            <h3>📝 Do seu Melzudin...</h3>
+            <div class="texto-conteudo">
+                <p>
+                    Minha Advogata, minha Primeira Dama...
+                </p>
+                <p>
+                    Eu queria que tivesse como expressar o meu amor inefável por você, mas justamente por ser inefável me faltam palavras ou demonstrações, então quero utilizar esse site para tentar pelo menos demonstrar isso. Foram noites dormindo tarde, mas mesmo assim o sono era o que pouco me importava, saber que tenho a melhor namorada do mundo e que você é muito além daquilo que eu poderia pedir, só tenho o que agradecer a Deus por ter te colocado em minha vida.
+                </p>
+                <p class="assinatura">Com amor, Seu Líder da Técnica.</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="reveal">
         <p>Feito com amor, café e código pelo seu Melzudin.</p>
+        <p style="font-size: 0.8rem; color: #555; margin-top: 10px;">★ Apoiado pela Estrela Solitária ★</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
