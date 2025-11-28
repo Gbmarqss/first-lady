@@ -22,6 +22,8 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
 }
 
 /* --- Animations --- */
@@ -42,7 +44,6 @@ body {
     background-image: url('img/capa1.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     transition: background-image 1s ease-in-out;
     display: flex;
     align-items: center;
@@ -50,6 +51,7 @@ body {
     text-align: center;
     position: relative;
     padding: 20px;
+    width: 100%;
 }
 
 /* Dark Overlay for Hero */
@@ -74,51 +76,193 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border: var(--glass-border);
     max-width: 90%;
-    width: 500px;
+    width: min(500px, 90vw);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
 }
 
 h1 {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1rem;
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    word-wrap: break-word;
 }
 
 .subtitle {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
     margin-bottom: 1.5rem;
     color: #cbd5e1;
     letter-spacing: 0.5px;
+    line-height: 1.4;
+    word-wrap: break-word;
 }
 
 #contador {
-    font-size: 1.2rem;
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
     font-weight: 600;
     color: var(--accent-color);
     background: rgba(255, 255, 255, 0.05);
-    padding: 12px 20px;
+    padding: clamp(8px, 3vw, 12px) clamp(15px, 4vw, 20px);
     border-radius: 50px;
     display: inline-block;
     border: 1px solid rgba(255, 204, 0, 0.3);
     box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+    line-height: 1.3;
+    word-wrap: break-word;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- CodePen Style Player (Card) --- */
+.player-card {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: min(300px, 85vw);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.player-card:hover {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+.player-img {
+    width: 100%;
+    height: clamp(120px, 30vw, 200px);
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.player-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.player-card:hover .player-img img {
+    transform: scale(1.1);
+}
+
+.player-details {
+    text-align: center;
+    padding: clamp(10px, 3vw, 15px);
+}
+
+.song-title {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+.artist-name {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    color: #ccc;
+    margin: 5px 0 0;
+    font-weight: 400;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+.player-controls {
+    padding: 0 clamp(15px, 4vw, 20px);
+}
+
+.time-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--accent-color);
+    transition: width 0.1s linear;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 clamp(15px, 4vw, 20px);
+}
+
+.btn-control {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.btn-control:hover {
+    color: var(--accent-color);
+}
+
+.btn-control svg {
+    width: clamp(20px, 6vw, 24px);
+    height: clamp(20px, 6vw, 24px);
+}
+
+.btn-control.play svg {
+    width: clamp(32px, 10vw, 40px);
+    height: clamp(32px, 10vw, 40px);
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
 /* --- Jim Quote Section --- */
 .jim-quote {
-    padding: 4rem 2rem;
+    padding: clamp(2rem, 8vw, 4rem) clamp(1rem, 4vw, 2rem);
     text-align: center;
     background: radial-gradient(circle at center, #0f2444 0%, var(--bg-color) 70%);
+    width: 100%;
+}
+
+.quote-container {
+    max-width: min(800px, 90vw);
+    margin: 0 auto;
+    padding: clamp(15px, 4vw, 20px);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: var(--glass-border);
 }
 
 .jim-quote blockquote {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
+    font-size: clamp(1rem, 4vw, 1.4rem);
     line-height: 1.6;
     color: #fff;
+    word-wrap: break-word;
+    text-align: center;
 }
 
 .jim-quote cite {
@@ -127,27 +271,31 @@ h1 {
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 }
 
 /* --- Seções Gerais --- */
 section {
-    padding: 5rem 1.5rem;
+    padding: clamp(2rem, 8vw, 5rem) clamp(1rem, 3vw, 1.5rem);
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h2 {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: clamp(1.5rem, 6vw, 3rem);
     color: #fff;
     position: relative;
     display: inline-block;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: clamp(40px, 10vw, 60px);
     height: 3px;
     background: var(--accent-color);
     margin: 10px auto 0;
@@ -163,21 +311,24 @@ h2::after {
 .awards-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: clamp(20px, 4vw, 30px);
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .award-card {
     background: var(--card-bg);
     border: var(--glass-border);
-    padding: 30px;
-    width: 100%;
-    max-width: 300px;
+    padding: clamp(20px, 4vw, 30px);
+    width: min(300px, 90vw);
     border-radius: 20px;
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    flex: 1 1 min(300px, 90vw);
 }
 
 .award-card::before {
@@ -206,40 +357,46 @@ h2::after {
 .award-card h3 {
     color: var(--accent-color);
     margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    word-wrap: break-word;
 }
 
 .award-card p {
-    font-size: 0.95rem;
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
     color: #a0aec0;
+    word-wrap: break-word;
 }
 
 /* --- Galeria Polaroid --- */
 .gallery {
     background-color: #020c1b;
     position: relative;
+    width: 100%;
 }
 
 .polaroid-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: clamp(20px, 6vw, 40px);
     flex-wrap: wrap;
     padding-top: 20px;
-    min-height: 400px;
+    min-height: auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .polaroid {
     background: #fff;
-    padding: 12px 12px 50px 12px;
+    padding: clamp(8px, 2vw, 12px) clamp(8px, 2vw, 12px) clamp(35px, 8vw, 50px) clamp(8px, 2vw, 12px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     transform: rotate(-2deg);
-    width: 100%;
-    max-width: 280px;
+    width: min(280px, 85vw);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 4px;
     overflow: hidden;
     cursor: grab;
+    flex: 0 1 min(280px, 85vw);
 }
 
 .polaroid:active {
@@ -258,163 +415,34 @@ h2::after {
 
 .polaroid img {
     width: 100%;
-    height: 250px;
+    height: clamp(150px, 40vw, 250px);
     object-fit: cover;
     border: 1px solid #eee;
     filter: sepia(20%) contrast(1.1);
 }
 
 .polaroid p {
-    margin-top: 15px;
+    margin-top: 10px;
     font-family: var(--font-heading);
     color: #333;
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
     word-wrap: break-word;
     padding: 0 5px;
+    text-align: center;
 }
 
 /* --- Rodapé --- */
 footer {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem);
     background: #020812;
     color: #8892b0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* --- CodePen Style Player (Card) - POSIÇÃO CORRIGIDA --- */
-.player-card {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 300px;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    z-index: 200;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-    padding-bottom: 20px;
-    color: #fff;
-    top: 20px;
-}
-
-.player-card:hover {
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-}
-
-.player-img {
     width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 15px 15px 0 0;
 }
 
-.player-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.player-card:hover .player-img img {
-    transform: scale(1.1);
-}
-
-.player-details {
-    text-align: center;
-    padding: 15px;
-}
-
-.song-title {
-    font-size: 1.2rem;
-    margin: 0;
-    color: #fff;
-    font-weight: 700;
-}
-
-.artist-name {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin: 5px 0 0;
-    font-weight: 400;
-}
-
-.player-controls {
-    padding: 0 20px;
-}
-
-.time-bar {
-    width: 100%;
-    height: 4px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 2px;
-    margin-bottom: 15px;
-    position: relative;
-    cursor: pointer;
-}
-
-.progress {
-    width: 0%;
-    height: 100%;
-    background: var(--accent-color);
-    border-radius: 2px;
-    box-shadow: 0 0 10px var(--accent-color);
-    transition: width 0.1s linear;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.btn-control {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-control:hover {
-    color: var(--accent-color);
-}
-
-.btn-control svg {
-    width: 24px;
-    height: 24px;
-}
-
-.btn-control.play svg {
-    width: 40px;
-    height: 40px;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
-}
-
-/* --- Jim Quote Section Fix --- */
-.quote-container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 15px;
-    border: var(--glass-border);
-}
-
-.jim-quote blockquote {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    line-height: 1.6;
-    color: #fff;
+footer p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
     word-wrap: break-word;
 }
 
@@ -441,130 +469,112 @@ footer {
 }
 
 /* =========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE ESPECÍFICA
 ========================================= */
+
+/* Mobile First - Telas menores que 768px */
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
+    .hero {
+        padding: 10px;
+        min-height: 100vh;
+        justify-content: flex-start;
+        padding-top: clamp(120px, 25vw, 160px);
+    }
+
+    .player-card {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 15px;
+        width: min(320px, 92vw);
+        z-index: 1000;
     }
 
     .overlay {
-        padding: 1.5rem;
-        width: 90%;
-        margin-top: 140px;
+        margin-top: 0;
+        width: min(450px, 95vw);
+        padding: clamp(1rem, 4vw, 1.5rem);
     }
 
-    /* Player on Mobile */
-    .player-card {
-        width: 85%;
-        top: 20px;
-    }
-    
-    .hero {
-        min-height: 100vh;
-        height: auto;
-        padding: 10px;
-    }
-
-    .jim-quote blockquote {
-        font-size: 1.1rem;
-    }
-
-    section {
-        padding: 3rem 1rem;
-    }
-
-    .award-card {
-        max-width: 100%; 
-    }
-    
-    /* --- Carrossel Mobile --- */
     .polaroid-grid {
-        display: flex;
-        justify-content: flex-start;
+        flex-direction: column;
         align-items: center;
-        gap: 0;
-        flex-wrap: nowrap;
-        overflow: hidden;
-        padding: 20px 0;
-        min-height: 400px;
-        position: relative;
+        gap: 30px;
     }
-    
+
     .polaroid {
-        flex: 0 0 100%;
-        max-width: 280px;
+        flex: 0 0 auto;
         margin: 0 auto;
-        transform: none !important;
-        transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    
-    .polaroid:nth-child(even) {
-        transform: none !important;
+
+    /* Garantir que tudo fique centralizado */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .polaroid:hover {
-        transform: scale(1) rotate(0deg) !important;
+
+    section, footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 1.8rem;
+/* Telas muito pequenas (iPhone SE, etc) */
+@media screen and (max-width: 375px) {
+    .hero {
+        padding-top: clamp(100px, 28vw, 120px);
     }
-    
-    h2 {
-        font-size: 1.6rem;
+
+    .player-card {
+        width: 95vw;
+        top: 10px;
     }
-    
+
     .overlay {
-        margin-top: 160px;
+        width: 95vw;
         padding: 1rem;
     }
-    
-    .player-card {
-        width: 90%;
-        top: 15px;
-    }
-    
-    .polaroid {
-        max-width: 250px;
-    }
-    
-    .polaroid img {
-        height: 200px;
-    }
-    
-    .player-img {
-        height: 150px;
-    }
-    
-    .song-title {
-        font-size: 1rem;
-    }
-    
-    .artist-name {
+
+    #contador {
         font-size: 0.8rem;
+        padding: 8px 12px;
     }
 }
 
-/* CORREÇÃO ESPECÍFICA PARA DESKTOP - Player mais para o canto */
+/* Desktop - Telas maiores que 768px */
 @media screen and (min-width: 769px) {
     .player-card {
         left: 30px;
-        transform: none;
         top: 30px;
+        transform: none;
+        position: absolute;
     }
-    
-    .overlay {
-        margin-top: 0;
+
+    .hero {
+        justify-content: center;
+        padding-top: 0;
     }
 }
 
-/* Para telas muito grandes, ajuste fino */
+/* Telas muito grandes */
 @media screen and (min-width: 1200px) {
     .player-card {
         left: 50px;
         top: 50px;
     }
+}
+
+/* Garantir que imagens não ultrapassem containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevenir overflow horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
