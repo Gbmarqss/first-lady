@@ -117,7 +117,7 @@ h1 {
     box-sizing: border-box;
 }
 
-/* --- CodePen Style Player (Card) --- */
+/* --- Player Compacto (Sem Foto) --- */
 .player-card {
     position: absolute;
     left: 30px;
@@ -125,47 +125,31 @@ h1 {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    width: min(300px, 85vw);
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    width: min(280px, 80vw);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     z-index: 200;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    padding-bottom: 20px;
+    padding: 20px;
     color: #fff;
 }
 
 .player-card:hover {
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-}
-
-.player-img {
-    width: 100%;
-    height: clamp(120px, 30vw, 200px);
-    overflow: hidden;
-    border-radius: 15px 15px 0 0;
-}
-
-.player-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.player-card:hover .player-img img {
-    transform: scale(1.1);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
 }
 
 .player-details {
     text-align: center;
-    padding: clamp(10px, 3vw, 15px);
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 15px;
 }
 
 .song-title {
-    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
     margin: 0;
     color: #fff;
     font-weight: 700;
@@ -174,7 +158,7 @@ h1 {
 }
 
 .artist-name {
-    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
     color: #ccc;
     margin: 5px 0 0;
     font-weight: 400;
@@ -183,7 +167,7 @@ h1 {
 }
 
 .player-controls {
-    padding: 0 clamp(15px, 4vw, 20px);
+    padding: 0;
 }
 
 .time-bar {
@@ -209,7 +193,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 clamp(15px, 4vw, 20px);
+    padding: 0;
 }
 
 .btn-control {
@@ -217,15 +201,17 @@ h1 {
     border: none;
     color: #fff;
     cursor: pointer;
-    transition: color 0.2s;
+    transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 8px;
+    border-radius: 50%;
 }
 
 .btn-control:hover {
     color: var(--accent-color);
+    background: rgba(255,255,255,0.1);
 }
 
 .btn-control svg {
@@ -234,8 +220,8 @@ h1 {
 }
 
 .btn-control.play svg {
-    width: clamp(32px, 10vw, 40px);
-    height: clamp(32px, 10vw, 40px);
+    width: clamp(28px, 8vw, 36px);
+    height: clamp(28px, 8vw, 36px);
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
@@ -377,7 +363,7 @@ h2::after {
 .polaroid-grid {
     display: flex;
     justify-content: center;
-    gap: clamp(20px, 6vw, 40px);
+    gap: clamp(25px, 6vw, 40px);
     flex-wrap: wrap;
     padding-top: 20px;
     min-height: auto;
@@ -388,15 +374,15 @@ h2::after {
 
 .polaroid {
     background: #fff;
-    padding: clamp(8px, 2vw, 12px) clamp(8px, 2vw, 12px) clamp(35px, 8vw, 50px) clamp(8px, 2vw, 12px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: clamp(12px, 3vw, 15px) clamp(12px, 3vw, 15px) clamp(45px, 10vw, 60px) clamp(12px, 3vw, 15px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
     transform: rotate(-2deg);
-    width: min(280px, 85vw);
+    width: min(320px, 88vw);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
     cursor: grab;
-    flex: 0 1 min(280px, 85vw);
+    flex: 0 1 min(320px, 88vw);
 }
 
 .polaroid:active {
@@ -415,20 +401,22 @@ h2::after {
 
 .polaroid img {
     width: 100%;
-    height: clamp(150px, 40vw, 250px);
+    height: clamp(260px, 65vw, 380px);
     object-fit: cover;
     border: 1px solid #eee;
     filter: sepia(20%) contrast(1.1);
+    border-radius: 3px;
 }
 
 .polaroid p {
-    margin-top: 10px;
+    margin-top: 15px;
     font-family: var(--font-heading);
     color: #333;
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
     word-wrap: break-word;
-    padding: 0 5px;
+    padding: 0 8px;
     text-align: center;
+    line-height: 1.3;
 }
 
 /* --- Rodapé --- */
@@ -451,21 +439,22 @@ footer p {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
     width: 100%;
 }
 
 .carousel-indicator {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: rgba(255,255,255,0.3);
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .carousel-indicator.active {
     background: var(--accent-color);
+    transform: scale(1.2);
 }
 
 /* =========================================
@@ -478,7 +467,7 @@ footer p {
         padding: 10px;
         min-height: 100vh;
         justify-content: flex-start;
-        padding-top: clamp(120px, 25vw, 160px);
+        padding-top: clamp(100px, 22vw, 140px);
     }
 
     .player-card {
@@ -486,25 +475,31 @@ footer p {
         left: 50%;
         transform: translateX(-50%);
         top: 15px;
-        width: min(320px, 92vw);
+        width: min(300px, 90vw);
         z-index: 1000;
+        padding: 15px;
     }
 
     .overlay {
         margin-top: 0;
         width: min(450px, 95vw);
-        padding: clamp(1rem, 4vw, 1.5rem);
+        padding: clamp(1.2rem, 4vw, 1.5rem);
     }
 
     .polaroid-grid {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 40px;
     }
 
     .polaroid {
         flex: 0 0 auto;
         margin: 0 auto;
+        width: min(340px, 92vw);
+    }
+
+    .polaroid img {
+        height: clamp(280px, 70vw, 400px);
     }
 
     /* Garantir que tudo fique centralizado */
@@ -525,12 +520,13 @@ footer p {
 /* Telas muito pequenas (iPhone SE, etc) */
 @media screen and (max-width: 375px) {
     .hero {
-        padding-top: clamp(100px, 28vw, 120px);
+        padding-top: clamp(90px, 25vw, 110px);
     }
 
     .player-card {
-        width: 95vw;
+        width: 92vw;
         top: 10px;
+        padding: 12px;
     }
 
     .overlay {
@@ -542,6 +538,25 @@ footer p {
         font-size: 0.8rem;
         padding: 8px 12px;
     }
+
+    .polaroid {
+        width: 95vw;
+    }
+
+    .polaroid img {
+        height: 240px;
+    }
+}
+
+/* Tablets pequenos */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .polaroid img {
+        height: clamp(300px, 55vw, 350px);
+    }
+    
+    .polaroid-grid {
+        gap: 35px;
+    }
 }
 
 /* Desktop - Telas maiores que 768px */
@@ -551,11 +566,16 @@ footer p {
         top: 30px;
         transform: none;
         position: absolute;
+        width: 260px;
     }
 
     .hero {
         justify-content: center;
         padding-top: 0;
+    }
+
+    .polaroid img {
+        height: 300px;
     }
 }
 
@@ -564,6 +584,11 @@ footer p {
     .player-card {
         left: 50px;
         top: 50px;
+        width: 280px;
+    }
+
+    .polaroid img {
+        height: 320px;
     }
 }
 

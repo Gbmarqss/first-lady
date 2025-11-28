@@ -128,11 +128,20 @@ playPauseBtn.addEventListener('click', togglePlayPause);
 audio.addEventListener('timeupdate', updateProgressBar);
 timeBar.addEventListener('click', setProgress);
 
-document.addEventListener('click', function() {
-    if (audio.paused) {
+// Permitir reprodução após interação do usuário
+let audioEnabled = false;
+
+function enableAudio() {
+    if (!audioEnabled) {
+        audioEnabled = true;
         audio.load();
+        document.removeEventListener('click', enableAudio);
+        document.removeEventListener('touchstart', enableAudio);
     }
-}, { once: true });
+}
+
+document.addEventListener('click', enableAudio);
+document.addEventListener('touchstart', enableAudio);
 
 /* ================================
    4. POLAROID CAROUSEL - RESPONSIVO
@@ -189,7 +198,11 @@ function updateStack() {
 
 // Criar indicadores do carrossel
 function createCarouselIndicators() {
-    if (window.innerWidth > 768) return;
+    if (window.innerWidth > 768) {
+        const existingIndicators = document.querySelector('.carousel-indicators');
+        if (existingIndicators) existingIndicators.remove();
+        return;
+    }
     
     const existingIndicators = document.querySelector('.carousel-indicators');
     if (existingIndicators) existingIndicators.remove();
@@ -210,7 +223,7 @@ function createCarouselIndicators() {
     stackContainer.parentNode.appendChild(indicatorsContainer);
 }
 
-// Swipe Logic
+// Swipe Logic para mobile
 if (stackContainer) {
     stackContainer.addEventListener('touchstart', (e) => {
         if (window.innerWidth > 768) return;
