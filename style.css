@@ -7,7 +7,7 @@
     --text-color: #e2e8f0;
     --accent-color: #ffcc00;
     --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-    --font-heading: 'Special Elite', cursive;
+    --font-heading: 'Special Elite', cursive; /* Fonte do Jim e Títulos */
     --font-body: 'Outfit', sans-serif;
     --font-sci-fi: 'Orbitron', sans-serif;
 }
@@ -19,10 +19,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
-    min-height: 100vh; /* Correção do fundo */
+    min-height: 100vh;
 }
 
-/* Preload */
 body::after {
     position: absolute; width: 0; height: 0; overflow: hidden; z-index: -1;
     content: url('img/capa1.jpg') url('img/capa2.jpg') url('img/capa3.jpg');
@@ -48,6 +47,8 @@ body::after {
     position: relative;
     padding: 20px;
     width: 100%;
+    /* Garante que os itens fiquem um embaixo do outro */
+    gap: 30px; 
 }
 
 .hero::before {
@@ -55,6 +56,32 @@ body::after {
     background: linear-gradient(to bottom, rgba(5, 16, 36, 0.4), var(--bg-color)); z-index: 1;
 }
 
+/* --- Player Card (Posição Corrigida) --- */
+.player-card {
+    /* Mudei para RELATIVE para ele não flutuar em cima do texto */
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 300px; border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    z-index: 200; display: flex; flex-direction: column;
+    padding: 20px; color: #fff; transition: all 0.3s ease;
+    /* Margem para não colar no topo */
+    margin-top: 40px;
+}
+
+.player-details { text-align: center; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; }
+.song-title { font-size: 1.2rem; font-weight: 700; margin: 0; }
+.artist-name { font-size: 0.9rem; color: #ccc; margin-top: 5px; }
+.time-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-bottom: 15px; position: relative; cursor: pointer; }
+.progress { width: 0%; height: 100%; background: var(--accent-color); border-radius: 2px; box-shadow: 0 0 10px var(--accent-color); }
+.buttons { display: flex; justify-content: space-between; align-items: center; }
+.btn-control { background: none; border: none; color: #fff; cursor: pointer; padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.btn-control:hover { color: var(--accent-color); background: rgba(255,255,255,0.1); }
+.btn-control svg { width: 24px; height: 24px; }
+.btn-control.play svg { width: 36px; height: 36px; }
+
+/* --- Conteúdo Texto (Overlay) --- */
 .overlay {
     position: relative; z-index: 2;
     background: rgba(5, 16, 36, 0.6);
@@ -63,7 +90,8 @@ body::after {
     border: var(--glass-border);
     max-width: 90%; width: min(500px, 90vw);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    margin: 80px auto 0 auto;
+    /* Remove margem automática que bugava */
+    margin: 0 auto; 
 }
 
 h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
@@ -84,36 +112,19 @@ h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); margin
     display: inline-block; border: 1px solid rgba(255, 204, 0, 0.3); box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
 }
 
-/* --- Player Card --- */
-.player-card {
-    position: absolute; left: 30px; top: 30px;
-    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 300px; border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    z-index: 200; display: flex; flex-direction: column;
-    padding: 20px; color: #fff; transition: all 0.3s ease;
-}
-.player-details { text-align: center; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; }
-.song-title { font-size: 1.2rem; font-weight: 700; margin: 0; }
-.artist-name { font-size: 0.9rem; color: #ccc; margin-top: 5px; }
-.time-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-bottom: 15px; position: relative; cursor: pointer; }
-.progress { width: 0%; height: 100%; background: var(--accent-color); border-radius: 2px; box-shadow: 0 0 10px var(--accent-color); }
-.buttons { display: flex; justify-content: space-between; align-items: center; }
-.btn-control { background: none; border: none; color: #fff; cursor: pointer; padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-.btn-control:hover { color: var(--accent-color); background: rgba(255,255,255,0.1); }
-.btn-control svg { width: 24px; height: 24px; }
-.btn-control.play svg { width: 36px; height: 36px; }
-
 /* --- Seções Gerais --- */
 section { padding: clamp(3rem, 8vw, 5rem) 1.5rem; text-align: center; width: 100%; }
 h2 { font-size: clamp(1.5rem, 5vw, 2.2rem); margin-bottom: 2rem; color: #fff; position: relative; display: inline-block; }
 h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent-color); margin: 10px auto 0; box-shadow: 0 0 10px var(--accent-color); }
 
-/* --- Jim Quote --- */
+/* --- Jim Quote (FONTE CORRIGIDA) --- */
 .jim-quote { background: radial-gradient(circle at center, #0f2444 0%, var(--bg-color) 70%); }
 .quote-container { max-width: 800px; margin: 0 auto; padding: 20px; background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: var(--glass-border); }
-.jim-quote blockquote { font-family: var(--font-heading); font-size: clamp(1rem, 4vw, 1.3rem); color: #fff; line-height: 1.6; }
+.jim-quote blockquote { 
+    font-family: var(--font-heading); /* Special Elite */
+    font-size: clamp(1rem, 4vw, 1.3rem); 
+    color: #fff; line-height: 1.6; 
+}
 .jim-quote cite { color: var(--accent-color); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; display: block; margin-top: 15px; }
 
 /* --- Star Wars Quote --- */
@@ -185,8 +196,22 @@ footer { text-align: center; padding: 3rem 1rem; background: #020812; color: #88
 
 /* --- Responsividade Mobile --- */
 @media screen and (max-width: 768px) {
-    .hero { padding-top: 130px; justify-content: flex-start; }
-    .player-card { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 350px; z-index: 1000; backdrop-filter: blur(20px); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-    .overlay { margin-top: 20px; }
+    /* No mobile, Player e Overlay fluem normal */
+    .hero { 
+        padding-top: 100px; 
+        justify-content: flex-start;
+        gap: 20px;
+    }
+    
+    .player-card {
+        /* No mobile, garantimos que ele não sobreponha */
+        position: relative;
+        left: auto; top: auto;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .overlay { margin-top: 0; }
+    
     .polaroid { width: 90%; max-width: 300px; margin-bottom: 10px; transform: rotate(0deg) !important; }
 }
