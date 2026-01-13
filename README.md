@@ -1,35 +1,16 @@
-# 👑 Project: First Lady
+# React + Vite
 
-> "I think, even then I knew, I was waiting for my wife." - Jim Halpert
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### 📋 Sobre o Projeto
+Currently, two official plugins are available:
 
-Repositório oficial dedicado à **Primeira Dama da Comunicação**.
-Este não é apenas um site, é uma documentação viva de como minha vida ficou melhor (e mais organizada) desde a sua chegada.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Desenvolvido exclusivamente para a **Advogata** mais linda do Rio de Janeiro.
+## React Compiler
 
-### 🛠️ Tech Stack (Tecnologias)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- **HTML5:** Estrutura sólida (igual nossa parceria).
-- **CSS3:** Estilização elegante (inspirada nas suas fotos).
-- **Javascript:** Lógica do amor (que não tem lógica, mas funciona).
-- **Café:** Combustível do Dev.
-- **Amor:** Infinito.
+## Expanding the ESLint configuration
 
-### 🚀 Status do Deploy
-
-![Build Status](https://img.shields.io/badge/Love-100%25-red)
-![Status](https://img.shields.io/badge/Status-Apaixonado-brightgreen)
-![Owner](https://img.shields.io/badge/Dev-Melzudin-black)
-
-### 🐛 Known Bugs (Problemas Conhecidos)
-
-- O desenvolvedor (Melzudin) perde a postura de malvado quando vê a usuária.
-- Excesso de referências de Star Wars e The Office no código-fonte.
-- O sistema trava de tanta beleza nas fotos da galeria.
-
-### 📄 Licença
-
-Propriedade exclusiva da **Tropa do Mel**.
-Todos os direitos reservados.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

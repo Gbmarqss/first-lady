@@ -1,0 +1,96 @@
+import { motion } from 'framer-motion';
+import { CheckCircle2, Briefcase } from 'lucide-react';
+
+export function JobApplication() {
+    return (
+        <section className="py-24 flex justify-center px-4 bg-[#f8f9fa] relative overflow-hidden">
+
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
+                style={{ backgroundImage: 'radial-gradient(#051024 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+            </div>
+
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="bg-white max-w-lg w-full rounded-xl shadow-2xl overflow-hidden border border-gray-200 relative transform hover:scale-[1.01] transition-transform duration-500"
+            >
+                {/* Carimbo de Vaga Preenchida */}
+                <motion.div
+                    initial={{ scale: 3, opacity: 0, rotate: -45 }}
+                    whileInView={{ scale: 1, opacity: 0.9, rotate: -15 }}
+                    transition={{ delay: 0.8, type: "spring", stiffness: 200, damping: 20 }}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-red-700 text-red-700 font-black text-4xl md:text-6xl p-6 rounded-lg z-30 uppercase tracking-widest mix-blend-multiply pointer-events-none"
+                    style={{ textShadow: "2px 2px 0px rgba(255,0,0,0.1)" }}
+                >
+                    PREENCHIDA
+                </motion.div>
+
+                {/* Cabeçalho da Vaga */}
+                <div className="bg-[#051024] p-8 text-white flex justify-between items-start relative overflow-hidden">
+                    {/* Decorative shine on header */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+
+                    <div className="relative z-10 w-full">
+                        <div className="flex items-center gap-2 text-[#d4af37] mb-3">
+                            <Briefcase size={16} />
+                            <span className="text-xs font-bold tracking-[0.2em] uppercase">Processo Seletivo 2025</span>
+                        </div>
+                        <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2">Cargo: Namorado da Advogata</h2>
+                        <div className="flex flex-wrap gap-2 mt-3">
+                            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold text-blue-200">
+                                CLT (Do Teu Coração)
+                            </span>
+                            <span className="bg-white/10 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold text-green-200">
+                                Exclusividade Total
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Corpo: Os Requisitos */}
+                <div className="p-8 relative z-10 bg-white">
+                    <h3 className="font-bold text-gray-800 mb-6 uppercase text-xs tracking-widest border-b border-gray-100 pb-2">
+                        Requisitos Obrigatórios (Edital 001/25):
+                    </h3>
+
+                    <ul className="space-y-4 mb-8">
+                        {[
+                            "Ser cristão (Nível: Joelho fervoroso 🔥)",
+                            "Ter caráter inegociável",
+                            "Ter visão de futuro (e que futuro!)"
+                        ].map((req, i) => (
+                            <motion.li
+                                key={i}
+                                initial={{ x: -20, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.3 + (i * 0.2) }}
+                                className="flex items-center gap-4 text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-100 hover:border-blue-100 transition-colors"
+                            >
+                                <div className="bg-green-100 p-1 rounded-full text-green-600 shrink-0">
+                                    <CheckCircle2 size={18} strokeWidth={3} />
+                                </div>
+                                <span className="text-sm font-medium">{req}</span>
+                            </motion.li>
+                        ))}
+                    </ul>
+
+                    <div className="mt-8 pt-6 border-t border-gray-100 bg-[#f8fafc] -mx-8 -mb-8 p-8">
+                        <h3 className="font-bold text-gray-500 mb-3 text-xs uppercase tracking-widest">
+                            Histórico da Candidatura (08/11/2025):
+                        </h3>
+                        <div className="bg-white p-5 rounded-r-xl rounded-bl-xl shadow-sm text-sm text-gray-700 border-l-4 border-[#25D366] relative">
+                            <span className="absolute -top-2.5 left-0 w-0 h-0 border-l-[10px] border-l-[#25D366] border-t-[10px] border-t-transparent"></span>
+                            <p className="italic mb-3 text-lg">"Tá... Quero me candidatar." ✋</p>
+                            <div className="flex items-center justify-end gap-2 text-xs text-gray-400 font-bold border-t border-gray-100 pt-2 mt-2">
+                                <span>Candidato Aprovado</span>
+                                <CheckCircle2 size={12} className="text-blue-500" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+        </section>
+    );
+}
