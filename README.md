@@ -1,16 +1,49 @@
-# React + Vite
+# First Lady 👩‍⚖️💖
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um site interativo e romântico desenvolvido especialmente para a "Advogata" (Primeira Dama), repleto de easter eggs, referências ao relacionamento e animações.
 
-Currently, two official plugins are available:
+## 🌟 Funcionalidades (Highlights)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **Love Loader (Hype Screen)** ⏳: Tela de carregamento animada com frases personalizadas ("Aquecendo os pneus...", "Preparando o café...").
+*   **Release Notes do Amor (`LoveChangelog`)** 📝: Histórico do relacionamento estilo changelog de software (v1.0.0 Start, v2.0.0 Oficial, v2.0.1 Switch Update).
+*   **Vaga Preenchida (`JobApplication`)** 💼: Card de vaga de emprego com carimbo "PREENCHIDA" e requisitos da vaga "Namorado".
+*   **Modo Avião (`CozyHammock`)** 🧶: Animação de rede balançando para representar a zona de conforto do casal.
+*   **Dicionário do Amor (`LoveDictionary`)** 📖: Definição sofisticada de "Soulmate" com áudio de pronúncia.
+*   **Games & Fun**:
+    *   **Minecraft**: Lista de conquistas ("Advancements").
+    *   **Nintendo Switch**: Console animado com Joy-Cons conectando.
+    *   **The Dundie Awards**: Premiação personalizada (Musa da Bitoca 💋).
+*   **Mídia**: Player estilo Spotify (Sade - No Ordinary Love) e Galeria Polaroid.
+*   **Interatividade**:
+    *   Terminal com comandos (`te amo`, `advogata`).
+    *   Contrato de Namoro com confetes.
 
-## React Compiler
+## 🛠️ Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Core**: React + Vite
+*   **Estilização**: Tailwind CSS v4
+*   **Animações**: Framer Motion
+*   **Ícones**: Lucide React
+*   **Extras**: Canvas Confetti, Typewriter Effect
 
-## Expanding the ESLint configuration
+## 🚀 Como Rodar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+2.  Rode o servidor de desenvolvimento:
+    ```bash
+    npm run dev
+    ```
+3.  Build para produção:
+    ```bash
+    npm run build
+    ```
+
+## 📜 Versão
+
+**v2.0.0 (Stable Release)** - *Deploy Oficial*
+
+---
+Feito com ❤️, café e muito código por **Melzudin**.
