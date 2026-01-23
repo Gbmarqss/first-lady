@@ -66,16 +66,17 @@ export function QuoteSection() {
 
               {/* Jim's Teapot Secret */}
               {isJim && (
-                <div className="absolute top-4 right-4 animate-bounce">
+                <div className="absolute top-4 right-4 animate-bounce z-[100]">
                   <button
                     onClick={() => setShowTeapotMessage(!showTeapotMessage)}
-                    className="text-white/30 hover:text-green-400 transition-colors transform hover:rotate-12 text-2xl"
+                    className="text-white/30 hover:text-green-400 transition-colors transform hover:rotate-12 text-2xl relative z-[100]"
                     title="Tem um segredinho aqui..."
+                    aria-label="Bule secreto"
                   >
-                    🫖
+                    &#x1FAD6;
                   </button>
                   {showTeapotMessage && (
-                    <div className="absolute top-8 right-0 w-64 bg-yellow-100 text-black p-4 rounded-md shadow-xl text-left font-handwritten transform rotate-2 z-50 border border-yellow-300">
+                    <div className="absolute top-8 right-0 w-64 bg-yellow-100 text-black p-4 rounded-md shadow-xl text-left font-handwritten transform rotate-2 z-[100] border border-yellow-300">
                       <p className="text-sm font-bold mb-1">Do Melzudin para a Advogata:</p>
                       <p className="text-xs italic">
                         "Assim como o Jim esperou a Pam, eu esperaria por você. Mas que bom que não precisei esperar tanto! ❤️"
