@@ -22,6 +22,8 @@ export function LoginScreen({ onLoginSuccess }) {
         <form onSubmit={handleSubmit}>
           <input
             type="password"
+            inputMode="numeric"
+            pattern="\d*"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={`w-full p-3 bg-gray-800 border ${error ? 'border-red-500' : 'border-gray-700'} rounded-lg text-white text-center font-mono focus:outline-none focus:ring-2 focus:ring-yellow-500`}

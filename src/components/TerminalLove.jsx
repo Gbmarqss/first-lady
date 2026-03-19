@@ -105,7 +105,8 @@ export function TerminalLove() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               className="bg-transparent border-none outline-none text-white flex-1 focus:ring-0"
-              autoFocus
+              autoComplete="off"
+              autoCapitalize="none"
               spellCheck="false"
             />
             <span className="animate-pulse bg-gray-500 w-2 h-4 inline-block -ml-1"></span>

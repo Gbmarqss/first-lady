@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import { LoginScreen } from './components/LoginScreen';
 import { LoveLoader } from './components/LoveLoader';
 import { QuoteSection } from './components/QuoteSection';
 import { F1Telemetry } from './components/F1Telemetry';
 import { RelationshipTimer } from './components/RelationshipTimer';
 import { TerminalLove } from './components/TerminalLove';
-import { PolaroidGallery } from './components/PolaroidGallery';
 import { MusicPlayer } from './components/MusicPlayer';
-import { BibleVerse } from './components/BibleVerse';
-import { LoveLetter } from './components/LoveLetter';
-import { FunSection } from './components/FunSection';
-import { MinecraftAchievements } from './components/MinecraftAchievements';
-import { NintendoLove } from './components/NintendoLove';
-import { JobApplication } from './components/JobApplication';
-import { LoveChangelog } from './components/LoveChangelog';
-import { CozyHammock } from './components/CozyHammock';
-import { LoveDictionary } from './components/LoveDictionary';
-import { LoveContract } from './components/LoveContract';
+
+const PolaroidGallery = lazy(() => import('./components/PolaroidGallery').then(module => ({ default: module.PolaroidGallery })));
+const BibleVerse = lazy(() => import('./components/BibleVerse').then(module => ({ default: module.BibleVerse })));
+const LoveLetter = lazy(() => import('./components/LoveLetter').then(module => ({ default: module.LoveLetter })));
+const FunSection = lazy(() => import('./components/FunSection').then(module => ({ default: module.FunSection })));
+const MinecraftAchievements = lazy(() => import('./components/MinecraftAchievements').then(module => ({ default: module.MinecraftAchievements })));
+const NintendoLove = lazy(() => import('./components/NintendoLove').then(module => ({ default: module.NintendoLove })));
+const JobApplication = lazy(() => import('./components/JobApplication').then(module => ({ default: module.JobApplication })));
+const LoveChangelog = lazy(() => import('./components/LoveChangelog').then(module => ({ default: module.LoveChangelog })));
+const CozyHammock = lazy(() => import('./components/CozyHammock').then(module => ({ default: module.CozyHammock })));
+const LoveDictionary = lazy(() => import('./components/LoveDictionary').then(module => ({ default: module.LoveDictionary })));
+const LoveContract = lazy(() => import('./components/LoveContract').then(module => ({ default: module.LoveContract })));
 
 const images = ['/img/capa1.jpg', '/img/capa2.jpg', '/img/capa3.jpg'];
 
@@ -82,17 +83,19 @@ function App() {
           <QuoteSection />
           <F1Telemetry />
           <TerminalLove />
-          <JobApplication />
-          <FunSection />
-          <MinecraftAchievements />
-          <CozyHammock />
-          <NintendoLove />
-          <PolaroidGallery />
-          <LoveLetter />
-          <LoveDictionary />
-          <LoveChangelog />
-          <BibleVerse />
-          <LoveContract />
+          <Suspense fallback={<div className="text-white text-center py-10">Carregando memórias...</div>}>
+            <JobApplication />
+            <FunSection />
+            <MinecraftAchievements />
+            <CozyHammock />
+            <NintendoLove />
+            <PolaroidGallery />
+            <LoveLetter />
+            <LoveDictionary />
+            <LoveChangelog />
+            <BibleVerse />
+            <LoveContract />
+          </Suspense>
 
           <footer className="text-center py-10 bg-[#020812] border-t border-white/5">
             <p className="text-gray-400">Feito com amor, café e código pelo seu Melzudin.</p>

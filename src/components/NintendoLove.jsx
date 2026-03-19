@@ -15,7 +15,8 @@ export function NintendoLove() {
 
             {/* O Switch (Container) */}
             <motion.div
-                className="flex items-center gap-1 md:gap-2 scale-[0.6] sm:scale-75 md:scale-100 transform origin-center"
+                className="flex items-center gap-1 md:gap-2 transform origin-center"
+                style={{ transform: 'scale(min(1, 100vw / 500px))' }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
             >

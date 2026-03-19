@@ -38,7 +38,7 @@ export function RelationshipTimer() {
 
       const totalMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);
 
-      setTime({ years, months, days, hours, minutes, seconds, totalMonths });
+      setTime({ years, months, days, hours, minutes, seconds, totalMonths, totalDays });
 
       // Check if today is the 22nd and we haven't celebrated this month yet
       const currentDay = now.getDate();
@@ -62,13 +62,49 @@ export function RelationshipTimer() {
 
   return (
     <>
-      <div className="bg-white/5 border border-yellow-500/30 rounded-full px-6 py-3 text-yellow-400 font-mono shadow-[0_0_15px_rgba(255,204,0,0.2)] text-center">
-        <div>
-          {format(time.years, 'Ano', 'Anos')}, {format(time.months, 'Mês', 'Meses')}, {format(time.days, 'Dia', 'Dias')}
+      <div className="w-full max-w-sm mx-auto bg-[#0a1526] overflow-hidden rounded-[2rem] shadow-2xl flex flex-col font-sans border border-white/5 mt-8">
+        {/* Top Image portion */}
+        <div className="relative h-64 w-full">
+          <img src="/img/capa1.jpg" alt="Capa" className="w-full h-full object-cover" />
+
         </div>
-        <div className="text-sm text-gray-400 mt-1">
-          {String(time.hours).padStart(2, '0')}h {String(time.minutes).padStart(2, '0')}m {String(time.seconds).padStart(2, '0')}s
+
+        {/* Bottom Info portion */}
+        <div className="p-6 pt-2 pb-8 bg-[#0a1526]">
+          <h2 className="text-white text-[22px] font-bold mb-1 tracking-tight">Gb e Gabi</h2>
+          <p className="text-[#a0a0a0] mb-6 text-[14px]">Juntos desde 2025</p>
+
+          <div className="grid grid-cols-3 gap-3">
+            <div className="bg-[#112240] rounded-xl py-4 flex flex-col items-center justify-center shadow-inner pt-5 pb-3">
+              <span className="text-white text-2xl font-bold font-sans tracking-tight">{time.years !== undefined ? time.years : '0'}</span>
+              <span className="text-[#a0a0a0] text-[12px] font-medium mt-1">Anos</span>
+            </div>
+            <div className="bg-[#112240] rounded-xl py-4 flex flex-col items-center justify-center shadow-inner pt-5 pb-3">
+              <span className="text-white text-2xl font-bold font-sans tracking-tight">{time.months !== undefined ? time.months : '0'}</span>
+              <span className="text-[#a0a0a0] text-[12px] font-medium mt-1">Meses</span>
+            </div>
+            <div className="bg-[#112240] rounded-xl py-4 flex flex-col items-center justify-center shadow-inner pt-5 pb-3">
+              <span className="text-white text-2xl font-bold font-sans tracking-tight">{time.days !== undefined ? time.days : '0'}</span>
+              <span className="text-[#a0a0a0] text-[12px] font-medium mt-1">Dias</span>
+            </div>
+            <div className="bg-[#112240] rounded-xl py-4 flex flex-col items-center justify-center shadow-inner pt-5 pb-3">
+              <span className="text-white text-2xl font-bold font-sans tracking-tight">{String(time.hours || 0).padStart(2, '0')}</span>
+              <span className="text-[#a0a0a0] text-[12px] font-medium mt-1">Horas</span>
+            </div>
+            <div className="bg-[#112240] rounded-xl py-4 flex flex-col items-center justify-center shadow-inner pt-5 pb-3">
+              <span className="text-white text-2xl font-bold font-sans tracking-tight">{String(time.minutes || 0).padStart(2, '0')}</span>
+              <span className="text-[#a0a0a0] text-[12px] font-medium mt-1">Minutos</span>
+            </div>
+            <div className="bg-[#112240] rounded-xl py-4 flex flex-col items-center justify-center shadow-inner pt-5 pb-3">
+              <span className="text-white text-2xl font-bold font-sans tracking-tight">{String(time.seconds || 0).padStart(2, '0')}</span>
+              <span className="text-[#a0a0a0] text-[12px] font-medium mt-1">Segundos</span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div className="sr-only">
+        {format(time.years, 'Ano', 'Anos')}, {format(time.months, 'Mês', 'Meses')}, {format(time.days, 'Dia', 'Dias')}
       </div>
 
       {showCelebration && time.totalMonths && (
