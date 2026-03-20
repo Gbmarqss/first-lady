@@ -68,7 +68,7 @@ export function TerminalLove() {
   };
 
   return (
-    <section className="bg-[#282c34] py-20 px-4" onClick={() => inputRef.current?.focus()}>
+    <div className="w-full flex justify-center px-4 pt-8 pb-10" onClick={() => inputRef.current?.focus()}>
       <div className="max-w-xl mx-auto bg-[#1e1e1e] rounded-lg shadow-2xl border border-black/30 font-mono overflow-hidden">
         {/* Terminal Header */}
         <div className="bg-gray-700/50 p-2 flex items-center gap-2">
@@ -114,6 +114,6 @@ export function TerminalLove() {
           <div ref={bottomRef} />
         </div>
       </div>
-    </section>
+    </div>
   );
 }

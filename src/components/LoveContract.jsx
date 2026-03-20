@@ -44,44 +44,44 @@ export function LoveContract() {
     };
 
     return (
-        <section className="py-8 flex justify-center px-4 relative">
+        <div className="w-full flex justify-center px-4 relative pt-6 pb-20">
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="w-full max-w-lg bg-[#fdfbf7] text-black font-serif p-1 shadow-2xl rounded-sm"
+                className="w-full max-w-lg bg-navy-900 border border-white/10 text-white font-serif p-1 shadow-2xl rounded-xl"
             >
-                {/* Vintage Paper Effect Container */}
-                <div className="border-4 border-double border-gray-400 p-6 md:p-8 h-full min-h-full bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]">
+                {/* Premium Dark Paper Effect Container */}
+                <div className="border border-white/20 rounded-lg p-6 md:p-8 h-full min-h-full bg-black/40 backdrop-blur-sm">
 
                     <div className="text-center mb-6 mt-2">
-                        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-widest border-b-2 border-black inline-block pb-2 mb-2">Contrato de Adesão</h2>
-                        <h3 className="text-lg md:text-xl italic text-gray-700">Ao Amor Eterno & Paciência Infinita</h3>
+                        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-widest border-b border-white/30 text-white inline-block pb-2 mb-2">Contrato de Adesão</h2>
+                        <h3 className="text-lg md:text-xl italic text-white/50">Ao Amor Eterno & Paciência Infinita</h3>
                     </div>
 
-                    <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed text-gray-800">
+                    <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed text-white/80">
                         <p>
-                            <strong className="uppercase">Cláusula 1ª:</strong> O contratante (doravante denominado <em>"Melzudin"</em>) obriga-se, de forma irrevogável e irretratável, a fornecer suprimento ilimitado de <strong>CHOCOLATE</strong> e <strong>CARINHO</strong> à contratada.
+                            <strong className="uppercase text-primary font-bold">Cláusula 1ª:</strong> O contratante (doravante denominado <em>"Melzudin"</em>) obriga-se, de forma irrevogável e irretratável, a fornecer suprimento ilimitado de <strong>CHOCOLATE</strong> e <strong>CARINHO</strong> à contratada.
                         </p>
 
                         <p>
-                            <strong className="uppercase">Cláusula 2ª:</strong> A contratada (doravante denominada <em>"Advogata"</em>) gozará de <em>Habeas Corpus</em> preventivo em qualquer discussão, lide ou tribunal doméstico caso esteja comprovadamente com <strong>FOME</strong>.
+                            <strong className="uppercase text-primary font-bold">Cláusula 2ª:</strong> A contratada (doravante denominada <em>"Advogata"</em>) gozará de <em>Habeas Corpus</em> preventivo em qualquer discussão, lide ou tribunal doméstico caso esteja comprovadamente com <strong>FOME</strong>.
                         </p>
 
                         <p>
-                            <strong className="uppercase">Cláusula 3ª:</strong> Em caso de divergência sobre qual filme assistir, prevalecerá a escolha da Primeira Dama, salvo se for filme de terror ruim (hipótese em que o Melzudin tem direito a veto).
+                            <strong className="uppercase text-primary font-bold">Cláusula 3ª:</strong> Em caso de divergência sobre qual filme assistir, prevalecerá a escolha da Primeira Dama, salvo se for filme de terror ruim (hipótese em que o Melzudin tem direito a veto).
                         </p>
                     </div>
 
-                    <div className="mt-10 border-t border-dashed border-gray-400 pt-8">
-                        <h4 className="text-center font-bold uppercase tracking-widest text-sm text-gray-500 mb-4 flex items-center justify-center gap-2">
+                    <div className="mt-10 border-t border-dashed border-white/20 pt-8">
+                        <h4 className="text-center font-bold uppercase tracking-widest text-sm text-white/50 mb-4 flex items-center justify-center gap-2">
                             <PenNib weight="fill" className="w-4 h-4" />
                             Assinatura Eletrônica da Advogata
                         </h4>
                         
-                        <div className="relative border-b-2 border-black/30 bg-black/5 rounded-t-sm h-40 group touch-none">
+                        <div className="relative border border-white/30 bg-white/5 rounded-lg h-40 group touch-none overflow-hidden hover:bg-white/10 transition-colors">
                             <SignatureCanvas 
-                                penColor="blue"
+                                penColor="white"
                                 canvasProps={{className: "w-full h-full cursor-crosshair touch-none"}}
                                 ref={sigPad}
                             />
@@ -89,7 +89,7 @@ export function LoveContract() {
                             {!isSigned && (
                                 <button 
                                     onClick={handleClear}
-                                    className="absolute top-2 right-2 p-2 bg-white/80 rounded-full text-gray-500 hover:text-red-500 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                                    className="absolute top-2 right-2 p-2 bg-white/10 rounded-full text-white/50 hover:text-white hover:bg-white/20 shadow-sm opacity-0 group-hover:opacity-100 transition-all"
                                     title="Limpar"
                                 >
                                     <Eraser weight="fill" className="w-4 h-4" />
@@ -113,24 +113,24 @@ export function LoveContract() {
                             <div className="mt-6 flex justify-center">
                                 <button
                                     onClick={handleSign}
-                                    className="px-6 py-3 bg-red-800 text-white font-bold tracking-wider hover:bg-red-900 transition-colors rounded-sm shadow-md text-sm md:text-base w-full flex items-center justify-center gap-2"
+                                    className="px-6 py-3 bg-primary text-white font-bold tracking-wider hover:bg-primary/80 transition-colors rounded-lg shadow-md md:text-base w-full flex items-center justify-center gap-2"
                                 >
                                     SELAR ACORDO ✒️
                                 </button>
                             </div>
                         ) : (
                             <div className="mt-4 text-center">
-                                <p className="text-sm text-gray-500 italic">Contrato vitalício selado com sucesso na Blockchain do Coração.</p>
+                                <p className="text-sm text-white/50 italic">Contrato vitalício selado com sucesso na Blockchain do Coração.</p>
                             </div>
                         )}
                     </div>
 
-                    <div className="mt-8 pt-4 border-t border-gray-300 flex flex-col md:flex-row justify-between text-xs text-gray-500 italic gap-2 text-center md:text-left">
+                    <div className="mt-8 pt-4 border-t border-white/20 flex flex-col md:flex-row justify-between text-xs text-white/40 italic gap-2 text-center md:text-left">
                         <span>Datado no dia de hoje</span>
                         <span>Registrado em Cartório de Bons Motivos</span>
                     </div>
                 </div>
             </motion.div>
-        </section>
+        </div>
     );
 }

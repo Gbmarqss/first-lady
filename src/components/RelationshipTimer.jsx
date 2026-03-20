@@ -65,14 +65,14 @@ export function RelationshipTimer() {
       <div className="w-full max-w-sm mx-auto bg-[#0a1526] overflow-hidden rounded-[2rem] shadow-2xl flex flex-col font-sans border border-white/5 mt-8">
         {/* Top Image portion */}
         <div className="relative h-64 w-full">
-          <img src="/img/capa1.jpg" alt="Capa" className="w-full h-full object-cover" />
+          <img src="/img/tudo.jpg" alt="Capa" className="w-full h-full object-cover" />
 
         </div>
 
         {/* Bottom Info portion */}
         <div className="p-6 pt-2 pb-8 bg-[#0a1526]">
-          <h2 className="text-white text-[22px] font-bold mb-1 tracking-tight">Gb e Gabi</h2>
-          <p className="text-[#a0a0a0] mb-6 text-[14px]">Juntos desde 2025</p>
+          <h2 className="text-white text-[22px] font-bold mb-1 tracking-tight text-center">Gb e Gabi</h2>
+          <p className="text-[#a0a0a0] mb-6 text-[14px] text-center">Juntos desde 2025</p>
 
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-[#112240] rounded-xl py-4 flex flex-col items-center justify-center shadow-inner pt-5 pb-3">

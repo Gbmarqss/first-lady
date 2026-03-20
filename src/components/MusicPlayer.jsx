@@ -49,62 +49,86 @@ export function MusicPlayer() {
   };
 
   return (
-    <div className="bg-[#121212] border border-[#282828] rounded-lg shadow-xl w-72 p-4 font-sans select-none">
-      {/* Album Art Placeholder */}
-      <div className="w-full aspect-square bg-gradient-to-br from-purple-800 to-gray-900 rounded-md shadow-lg mb-4 flex items-center justify-center group overflow-hidden relative">
-        <img src="/img/sade.jpg" alt="No Ordinary Love Album Art" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-      </div>
-
-      {/* Song Info */}
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex-1 text-center">
-          <h2 className="text-white font-bold text-base truncate px-2 hover:underline cursor-pointer">No Ordinary Love</h2>
-          <h3 className="text-[#b3b3b3] text-xs hover:text-white hover:underline cursor-pointer transition-colors">Sade</h3>
+    <div className="w-full h-full bg-gradient-to-b from-[#251520] to-[#121212] flex flex-col p-6 pt-12 font-sans select-none justify-between pb-8">
+      {/* Album Art Header */}
+      <div className="flex-1 flex flex-col items-center justify-center max-h-[50vh] mb-8 relative">
+        <div className="w-full max-w-[300px] aspect-square shadow-[0_20px_50px_rgba(0,0,0,0.6)] rounded-xl overflow-hidden group">
+          <img src="/img/sade.jpg" alt="No Ordinary Love Album Art" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
         </div>
-        <button className="text-[#b3b3b3] hover:text-green-500 shrink-0">
-          <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path></svg>
-        </button>
       </div>
 
-      {/* Progress Bar */}
-      <div className="group mb-2">
-        <div
-          className="w-full bg-[#4d4d4d] h-1 rounded-full relative cursor-pointer group-hover:h-1.5 transition-all"
-          onClick={handleSeek}
-        >
+      <div className="flex flex-col w-full max-w-sm mx-auto mb-4 px-2">
+        {/* Song Info */}
+        <div className="flex justify-between items-end mb-6">
+          <div className="flex-1">
+            <h2 className="text-white font-bold text-2xl md:text-3xl truncate px-1 drop-shadow-sm">No Ordinary Love</h2>
+            <h3 className="text-[#b3b3b3] text-base md:text-lg mt-1 px-1">Sade</h3>
+          </div>
+          <button className="text-white hover:scale-110 active:scale-95 transition-transform shrink-0 pb-1">
+            <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 16 16" fill="#1db954"><path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path></svg>
+          </button>
+        </div>
+
+        {/* Progress Timeline */}
+        <div className="group mb-2 w-full">
           <div
-            className="bg-white group-hover:bg-[#1db954] h-full rounded-full absolute top-0 left-0 pointer-events-none"
-            style={{ width: `${progressPercentage}%` }}
-          />
+            className="w-full bg-[#4d4d4d] h-1 md:h-1.5 rounded-full relative cursor-pointer"
+            onClick={handleSeek}
+          >
+            <div
+              className="bg-white group-hover:bg-[#1db954] h-full rounded-full absolute top-0 left-0 pointer-events-none transition-colors"
+              style={{ width: `${progressPercentage}%` }}
+            />
+            {/* Playhead dot */}
+            <div 
+              className="w-3 h-3 bg-white rounded-full absolute top-1/2 -translate-y-1/2 -ml-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none"
+              style={{ left: `${progressPercentage}%` }}
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Time & Controls */}
-      <div className="flex justify-between text-[11px] text-[#b3b3b3] font-mono mb-2">
-        <span>{formatTime(progress)}</span>
-        <span>{formatTime(duration)}</span>
-      </div>
+        {/* Time stamps */}
+        <div className="flex justify-between text-xs text-[#b3b3b3] mt-1 mb-6 px-1">
+          <span>{formatTime(progress)}</span>
+          <span>{formatTime(duration)}</span>
+        </div>
 
-      <div className="flex justify-between items-center px-2">
-        <button className="text-[#b3b3b3] hover:text-white transition-colors">
-          <ShuffleIcon />
-        </button>
-        <button className="text-[#b3b3b3] hover:text-white transition-colors">
-          <PrevIcon />
-        </button>
-        <button
-          onClick={togglePlayPause}
-          className="bg-white rounded-full p-2 text-black hover:scale-105 active:scale-95 transition-transform flex items-center justify-center"
-        >
-          {isPlaying ? <PauseIcon /> : <PlayIcon />}
-        </button>
-        <button className="text-[#b3b3b3] hover:text-white transition-colors">
-          <NextIcon />
-        </button>
-        <button className="text-[#b3b3b3] hover:text-white transition-colors">
-          <RepeatIcon />
-        </button>
+        {/* Playback Controls */}
+        <div className="flex justify-between items-center px-2 w-full mt-2">
+          <button className="text-[#b3b3b3] hover:text-white transition-colors">
+            <ShuffleIcon />
+          </button>
+          
+          <button className="text-white hover:text-gray-300 transition-colors scale-125">
+            <PrevIcon />
+          </button>
+          
+          <button
+            onClick={togglePlayPause}
+            className="bg-white rounded-full w-16 h-16 text-black hover:scale-105 active:scale-95 transition-transform flex items-center justify-center shadow-lg"
+          >
+            {isPlaying ? (
+              <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>
+            ) : (
+              <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
+            )}
+          </button>
+          
+          <button className="text-white hover:text-gray-300 transition-colors scale-125">
+            <NextIcon />
+          </button>
+          
+          <button className="text-white hover:opacity-80 transition-colors">
+            <RepeatIcon />
+          </button>
+        </div>
+        
+        {/* Additional Devices/Volume Bar */}
+        <div className="mt-10 flex justify-center items-center gap-2 px-2 text-[#b3b3b3] text-sm font-medium">
+           <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor"><path d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"></path></svg>
+           <span>AirPods do Melzudin</span>
+        </div>
       </div>
     </div>
   );

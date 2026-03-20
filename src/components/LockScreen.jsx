@@ -49,14 +49,7 @@ export function LockScreen({ onUnlock }) {
   };
 
   return (
-    <div className="relative min-h-screen bg-navy-900 flex items-center justify-center overflow-hidden">
-      {/* Background Image (blurred) */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center z-0 scale-105"
-        style={{ backgroundImage: `url('/img/capa1.jpg')` }}
-      />
-      <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-sm z-10" />
-
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent">
       {/* Lock Screen UI */}
       <div className="relative z-20 flex flex-col items-center w-full max-w-sm px-6 pb-12 pt-16 min-h-screen justify-between">
         
@@ -90,12 +83,12 @@ export function LockScreen({ onUnlock }) {
           </div>
 
           {/* Bottom: Numpad */}
-          <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+          <div className="grid grid-cols-3 gap-x-6 gap-y-4">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
               <button
                 key={num}
                 onClick={() => handleKeyPress(num.toString())}
-                className="w-20 h-20 rounded-full bg-white/5 border border-white/10 text-3xl font-light text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all backdrop-blur-md"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/5 border border-white/10 text-2xl md:text-3xl font-light text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all backdrop-blur-md"
               >
                 {num}
               </button>
@@ -103,13 +96,13 @@ export function LockScreen({ onUnlock }) {
             <div /> {/* Empty space */}
             <button
               onClick={() => handleKeyPress('0')}
-              className="w-20 h-20 rounded-full bg-white/5 border border-white/10 text-3xl font-light text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all backdrop-blur-md"
+              className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/5 border border-white/10 text-2xl md:text-3xl font-light text-white flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all backdrop-blur-md"
             >
               0
             </button>
             <button
               onClick={handleBackspace}
-              className="w-20 h-20 rounded-full bg-transparent text-xl font-medium text-white/60 flex items-center justify-center hover:text-white hover:bg-white/10 active:scale-95 transition-all"
+              className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-transparent text-lg md:text-xl font-medium text-white/60 flex items-center justify-center hover:text-white hover:bg-white/10 active:scale-95 transition-all"
             >
               Apagar
             </button>

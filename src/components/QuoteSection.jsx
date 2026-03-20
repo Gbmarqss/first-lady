@@ -31,14 +31,14 @@ export function QuoteSection() {
   const [showTeapotMessage, setShowTeapotMessage] = useState(false);
 
   return (
-    <>
+    <div className="w-full flex flex-col pb-16">
       {quotes.map(q => {
         const styles = styleConfig[q.key];
         const isJim = q.key === 'jim';
         const isNoah = q.key === 'noah';
 
         return (
-          <section key={q.key} className={`py-24 px-4 text-center overflow-hidden flex items-center justify-center relative ${styles.container}`}>
+          <div key={q.key} className={`w-full min-h-[400px] py-16 px-4 text-center overflow-hidden flex items-center justify-center relative ${styles.container}`}>
 
             {/* Ambient effects for specific sections */}
             {q.key === 'anakin' && (
@@ -87,9 +87,9 @@ export function QuoteSection() {
               )}
 
             </div>
-          </section>
+          </div>
         )
       })}
-    </>
+    </div>
   );
 }

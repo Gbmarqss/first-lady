@@ -55,25 +55,25 @@ const getIcon = (type) => {
 };
 
 const getBadgeColor = (type) => {
-    if (type === 'new' || type === 'feat') return 'bg-yellow-500/10 text-yellow-600 border-yellow-200';
-    if (type === 'fix') return 'bg-green-500/10 text-green-600 border-green-200';
-    if (type === 'remove' || type === 'nerf') return 'bg-red-500/10 text-red-600 border-red-200';
-    return 'bg-blue-500/10 text-blue-600 border-blue-200';
+    if (type === 'new' || type === 'feat') return 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30';
+    if (type === 'fix') return 'bg-green-500/10 text-green-400 border-green-500/30';
+    if (type === 'remove' || type === 'nerf') return 'bg-red-500/10 text-red-400 border-red-500/30';
+    return 'bg-blue-500/10 text-blue-400 border-blue-500/30';
 }
 
 export function LoveChangelog() {
     return (
-        <section className="py-20 px-4 bg-white border-t border-gray-100">
-            <div className="max-w-3xl mx-auto">
+        <section className="w-full flex justify-center items-center px-4">
+            <div className="max-w-3xl w-full glass-card p-6 md:p-8">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full text-xs font-mono text-gray-500 mb-4">
+                    <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-mono text-white/60 mb-4">
                         <GitCommit size={14} weight="bold" /> main branch
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900 font-serif">Release Notes do Amor 📝</h2>
-                    <p className="text-gray-500 mt-2">Histórico de atualizações do sistema Melzudin & AdvogataOS</p>
+                    <h2 className="text-3xl font-bold text-white font-serif">Release Notes do Amor 📝</h2>
+                    <p className="text-white/60 mt-2">Histórico de atualizações do sistema Melzudin & AdvogataOS</p>
                 </div>
 
-                <div className="space-y-12 relative before:absolute before:left-[19px] md:before:left-8 before:top-0 before:h-full before:w-[2px] before:bg-gray-100">
+                <div className="space-y-12 relative before:absolute before:left-[19px] md:before:left-8 before:top-0 before:h-full before:w-[2px] before:bg-white/10">
                     {releases.map((release, i) => (
                         <motion.div
                             key={i}
@@ -83,20 +83,20 @@ export function LoveChangelog() {
                             className="relative pl-12 md:pl-24"
                         >
                             {/* Bolinha da Linha do Tempo */}
-                            <div className="absolute left-[10px] md:left-[23px] top-1 w-5 h-5 bg-white border-4 border-gray-200 rounded-full z-10"></div>
+                            <div className="absolute left-[10px] md:left-[23px] top-1 w-5 h-5 bg-[#0a192f] border-4 border-white/20 rounded-full z-10"></div>
 
                             {/* Cabeçalho da Versão */}
                             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-                                <h3 className="text-xl font-bold text-gray-800 font-mono">{release.version}</h3>
-                                <span className="text-xs font-mono text-gray-400 bg-gray-50 px-2 py-1 rounded border border-gray-100 inline-block w-fit">
+                                <h3 className="text-xl font-bold text-white/90 font-mono">{release.version}</h3>
+                                <span className="text-xs font-mono text-white/50 bg-white/5 px-2 py-1 rounded border border-white/10 inline-block w-fit">
                                     {release.date}
                                 </span>
                             </div>
 
                             {/* Lista de Mudanças */}
-                            <div className="bg-gray-50 rounded-xl border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-shadow duration-300">
                                 {release.changes.map((change, j) => (
-                                    <div key={j} className="flex gap-3 p-4 border-b border-gray-100 last:border-0 hover:bg-white transition-colors">
+                                    <div key={j} className="flex gap-3 p-4 border-b border-white/10 last:border-0 hover:bg-white/10 transition-colors">
                                         <div className={`mt-1 w-6 h-6 rounded flex items-center justify-center shrink-0 border ${getBadgeColor(change.type)}`}>
                                             {getIcon(change.type)}
                                         </div>
@@ -104,7 +104,7 @@ export function LoveChangelog() {
                                             <span className={`text-[10px] font-bold uppercase tracking-wider mr-2 px-1.5 py-0.5 rounded border ${getBadgeColor(change.type)}`}>
                                                 {change.type}
                                             </span>
-                                            <span className="text-sm text-gray-700 leading-relaxed font-sans">
+                                            <span className="text-sm text-white/80 leading-relaxed font-sans">
                                                 {change.text}
                                             </span>
                                         </div>

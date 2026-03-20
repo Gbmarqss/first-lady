@@ -44,7 +44,7 @@ const itemVariants = {
 
 export function MinecraftAchievements() {
     return (
-        <section className="bg-[#0a0a0a] py-16 px-4 font-['Press_Start_2P'] overflow-hidden relative border-t-4 border-[#3c3c3c]">
+        <div className="w-full px-4 pt-8 pb-16 font-['Press_Start_2P'] overflow-hidden relative">
 
             {/* Fundo de Textura (Opcional - usando CSS padrão por enquanto para evitar erros de string) */}
             <div className="absolute inset-0 opacity-5 pointer-events-none bg-repeat" style={{
@@ -90,6 +90,6 @@ export function MinecraftAchievements() {
                     ))}
                 </motion.div>
             </div>
-        </section>
+        </div>
     );
 }

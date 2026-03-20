@@ -64,8 +64,8 @@ export function PolaroidGallery() {
   };
 
   return (
-    <section className="bg-black py-20 px-4 overflow-hidden min-h-screen flex flex-col items-center">
-      <h2 className="text-center font-serif text-4xl text-white mb-10 drop-shadow-lg md:mb-16">
+    <section className="w-full flex flex-col items-center max-w-7xl">
+      <h2 className="text-center font-serif text-3xl text-white mb-6 drop-shadow-lg">
         📸 O Reflexo da Alma
       </h2>
 
@@ -122,19 +122,21 @@ export function PolaroidGallery() {
                     else setIsAutoPlaying(!isAutoPlaying); // Pause/Play on active card click
                   }}
                 >
-                  {/* Caption ABOVE the image */}
-                  <div className="w-full px-2 mb-4 flex items-center justify-center min-h-[4rem]">
-                    <p className="font-handwritten text-center text-white text-[28px] drop-shadow-md leading-tight line-clamp-2">
-                      {photo.caption}
-                    </p>
-                  </div>
-
                   {/* 9:16 Image Container */}
                   <div className="w-full aspect-[9/16] rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.8)] border border-white/20 relative bg-[#121212]">
                     <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover" />
 
                     {/* Dark overlay for side cards to give depth */}
                     {!isActive && <div className="absolute inset-0 bg-black/60" />}
+                    
+                    {/* Caption pill floating at bottom */}
+                    {isActive && (
+                      <div className="absolute bottom-6 left-4 right-4 flex justify-center z-20">
+                        <div className="glass-card bg-black/40 px-6 py-2 rounded-full border border-white/10 backdrop-blur-md">
+                          <p className="font-handwritten text-white text-xl md:text-2xl drop-shadow-md text-center line-clamp-1">{photo.caption}</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               );
