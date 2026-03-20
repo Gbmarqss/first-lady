@@ -1,6 +1,6 @@
 export function BibleVerse() {
     return (
-        <section className="relative w-full py-24 bg-[#0a0a0a] flex flex-col justify-center items-center overflow-hidden gap-16">
+        <div className="w-full pt-16 pb-24 flex flex-col justify-center items-center overflow-hidden gap-16">
 
             {/* Background Decor */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] text-9xl font-serif select-none pointer-events-none text-yellow-500">
@@ -52,6 +52,6 @@ export function BibleVerse() {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

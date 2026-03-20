@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 export function FunSection() {
     return (
-        <>
+        <div className="w-full flex flex-col pt-8 pb-16">
             {/* --- SEÇÃO 1: TROPA DO MEL --- */}
-            <section className="relative w-full py-24 bg-[#fffaf0] overflow-hidden flex justify-center items-center">
+            <div className="relative w-full pb-16 overflow-hidden flex justify-center items-center">
 
                 {/* Pattern de Fundo (Honeycomb) */}
                 <div className="absolute inset-0 opacity-[0.03]"
@@ -16,21 +16,21 @@ export function FunSection() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative max-w-2xl w-full mx-4 border-4 border-dashed border-yellow-400/50 rounded-[2rem] bg-white p-8 md:p-12 shadow-[0_10px_60px_-15px_rgba(234,179,8,0.3)] text-center relative overflow-hidden"
+                    className="relative max-w-2xl w-full mx-4 border border-yellow-400/20 rounded-[2rem] glass-card bg-navy-900/40 p-8 md:p-12 shadow-[0_10px_60px_-15px_rgba(234,179,8,0.1)] text-center overflow-hidden"
                 >
                     {/* Efeito de Mel Escorrendo (Decorativo) */}
                     <div className="absolute top-0 left-0 w-full h-4 bg-yellow-400 rounded-b-xl opacity-80" style={{ filter: 'blur(2px)' }}></div>
                     <div className="absolute top-0 right-12 w-6 h-12 bg-yellow-400 rounded-b-full opacity-80 animate-pulse"></div>
                     <div className="absolute top-0 left-12 w-4 h-8 bg-yellow-400 rounded-b-full opacity-80"></div>
 
-                    <h2 className="font-['Dancing_Script'] text-5xl md:text-6xl text-yellow-600 mb-2 drop-shadow-sm flex items-center justify-center gap-4">
+                    <h2 className="font-['Dancing_Script'] text-5xl md:text-6xl text-yellow-400 mb-2 drop-shadow-sm flex items-center justify-center gap-4">
                         <span>🍯</span> Tropa do Mel <span>🍯</span>
                     </h2>
-                    <p className="font-serif text-sm uppercase tracking-[0.2em] text-yellow-700/60 mb-8 border-b border-yellow-200 pb-4 inline-block">
+                    <p className="font-serif text-sm uppercase tracking-[0.2em] text-white/50 mb-8 border-b border-white/10 pb-4 inline-block">
                         Membros Fundadores & Vitalícios
                     </p>
 
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-2xl text-gray-700 font-bold font-['Special_Elite']">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-2xl text-white font-bold font-['Special_Elite']">
                         <div className="flex items-center gap-2 transform hover:scale-110 transition-transform cursor-cell">
                             <span className="text-4xl">🐻</span>
                             <span>Melzudin</span>
@@ -42,15 +42,15 @@ export function FunSection() {
                         </div>
                     </div>
 
-                    <p className="mt-8 text-xs md:text-sm text-gray-500 italic font-serif">
+                    <p className="mt-8 text-xs md:text-sm text-white/40 italic font-serif">
                         *Acesso restrito: Proibida entrada de amargura.
                     </p>
                 </motion.div>
-            </section>
+            </div>
 
 
             {/* --- SEÇÃO 2: THE DUNDIE AWARDS --- */}
-            <section className="relative w-full py-24 bg-[#051024] overflow-hidden">
+            <div className="relative w-full pb-24 pt-16 overflow-hidden border-t border-white/5">
 
                 {/* Efeito de Holofote (Spotlight) */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -91,8 +91,8 @@ export function FunSection() {
 
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </div>
     );
 }
 

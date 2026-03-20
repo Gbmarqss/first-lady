@@ -15,7 +15,7 @@ export function F1Telemetry() {
   }, []);
 
   return (
-    <section className="bg-gray-200 py-20 px-4">
+    <div className="w-full flex justify-center items-center p-4 pt-10">
       <div className="max-w-xs mx-auto bg-[#061939] text-white rounded-lg overflow-hidden border-t-4 border-yellow-400 border-b-4 border-red-600 font-mono">
         <div className="bg-[#112e5a] px-4 py-2 flex justify-between items-center font-bold">
           <span className="text-yellow-400">🐂 Red Bull Racing Love</span>
@@ -35,6 +35,6 @@ export function F1Telemetry() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

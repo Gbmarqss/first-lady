@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function LoveLetter() {
     return (
-        <div className="flex justify-center items-center py-24 px-4 perspective-1000 bg-[#051024]">
+        <div className="flex justify-center items-center w-full px-4 perspective-1000">
             <motion.div
                 initial={{ opacity: 0, y: 50, rotate: -2 }}
                 whileInView={{ opacity: 1, y: 0, rotate: 1 }}

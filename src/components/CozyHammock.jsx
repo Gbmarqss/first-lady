@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 
 export function CozyHammock() {
     return (
-        <section className="py-24 bg-gradient-to-b from-[#ffecd2] to-[#fcb69f] overflow-hidden relative flex flex-col items-center">
+        <div className="w-full pt-16 pb-24 bg-transparent overflow-hidden relative flex flex-col items-center">
 
             {/* Texto de Introdução */}
-            <div className="text-center mb-8 z-10 px-4">
-                <h3 className="font-['Dancing_Script'] text-3xl text-[#d35400] font-bold">Nosso Modo Avião ✈️</h3>
-                <p className="text-[#e67e22] mt-2 font-medium">Onde a gente se enrola e o mundo lá fora some.</p>
+            <div className="text-center mb-8 z-10 px-4 mt-8">
+                <h3 className="font-['Dancing_Script'] text-3xl text-orange-400 font-bold drop-shadow-md">Nosso Modo Avião ✈️</h3>
+                <p className="text-white/70 mt-2 font-medium">Onde a gente se enrola e o mundo lá fora some.</p>
             </div>
 
             {/* A Rede Balançando */}
@@ -47,10 +47,10 @@ export function CozyHammock() {
             </motion.div>
 
             {/* Frase Rodapé */}
-            <p className="mt-8 text-white font-bold bg-[#d35400]/80 px-4 py-1 rounded-full text-xs uppercase tracking-widest shadow-lg">
+            <p className="mt-8 text-white/90 font-bold bg-orange-600/40 border border-orange-500/50 px-4 py-1 rounded-full text-xs uppercase tracking-widest shadow-lg backdrop-blur-sm">
                 Zona Livre de Estresse
             </p>
 
-        </section>
+        </div>
     );
 }

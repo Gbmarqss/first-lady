@@ -6,9 +6,17 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#007fff',
+        'primary-hover': '#0066cc',
+        navy: {
+          900: '#0a192f',
+          800: '#112240',
+        }
+      },
       fontFamily: {
-        sans: ['Outfit', 'sans-serif'],
-        serif: ['Special Elite', 'serif'],
+        sans: ['Inter', 'Outfit', 'sans-serif'],
+        serif: ['Playfair Display', 'Special Elite', 'serif'],
         mono: ['Roboto Mono', 'monospace'],
         'sci-fi': ['Orbitron', 'sans-serif'],
         handwritten: ['Dancing Script', 'cursive'],

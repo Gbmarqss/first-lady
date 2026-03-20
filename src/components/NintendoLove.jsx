@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 export function NintendoLove() {
     return (
-        <section className="bg-[#1a1c20] py-24 flex flex-col items-center overflow-hidden border-t border-gray-800">
+        <div className="w-full flex flex-col items-center pt-8 pb-20 overflow-hidden">
 
-            <div className="mb-12 text-center px-4">
+            <div className="mb-8 text-center px-4">
                 <h3 className="text-white font-bold text-2xl font-sans tracking-wide uppercase">
                     <span className="text-[#00c3e3]">Player 1</span> & <span className="text-[#ff4554]">Player 2</span>
                 </h3>
@@ -15,7 +15,8 @@ export function NintendoLove() {
 
             {/* O Switch (Container) */}
             <motion.div
-                className="flex items-center gap-1 md:gap-2 scale-[0.6] sm:scale-75 md:scale-100 transform origin-center"
+                className="flex items-center gap-1 md:gap-2 transform origin-center"
+                style={{ transform: 'scale(min(1, 100vw / 500px))' }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
             >
@@ -76,6 +77,6 @@ export function NintendoLove() {
                 </motion.div>
 
             </motion.div>
-        </section>
+        </div>
     );
 }
