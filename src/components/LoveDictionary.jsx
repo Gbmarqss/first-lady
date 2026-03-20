@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Volume2 } from 'lucide-react'; // Ícone de som
+import { SpeakerHigh } from '@phosphor-icons/react';
 
 export function LoveDictionary() {
 
@@ -28,7 +28,7 @@ export function LoveDictionary() {
                                 className="p-2 hover:bg-gray-100 rounded-full transition-colors"
                                 title="Listen"
                             >
-                                <Volume2 size={20} />
+                                <SpeakerHigh size={20} weight="fill" />
                             </button>
                         </div>
                         <span className="italic text-gray-400 text-lg">noun</span>

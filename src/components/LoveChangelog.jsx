@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GitCommit, Sparkles, Bug, Zap } from 'lucide-react';
+import { GitCommit, Sparkle, Bug, Lightning } from '@phosphor-icons/react';
 
 const releases = [
     {
@@ -47,10 +47,10 @@ const releases = [
 
 const getIcon = (type) => {
     switch (type) {
-        case 'new': case 'feat': return <Sparkles size={14} className="text-yellow-500" />;
-        case 'fix': return <Bug size={14} className="text-green-500" />;
-        case 'nerf': case 'remove': return <Zap size={14} className="text-red-500" />;
-        default: return <GitCommit size={14} className="text-blue-400" />;
+        case 'new': case 'feat': return <Sparkle size={14} weight="fill" className="text-yellow-500" />;
+        case 'fix': return <Bug size={14} weight="fill" className="text-green-500" />;
+        case 'nerf': case 'remove': return <Lightning size={14} weight="fill" className="text-red-500" />;
+        default: return <GitCommit size={14} weight="bold" className="text-blue-400" />;
     }
 };
 
@@ -67,7 +67,7 @@ export function LoveChangelog() {
             <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full text-xs font-mono text-gray-500 mb-4">
-                        <GitCommit size={14} /> main branch
+                        <GitCommit size={14} weight="bold" /> main branch
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900 font-serif">Release Notes do Amor 📝</h2>
                     <p className="text-gray-500 mt-2">Histórico de atualizações do sistema Melzudin & AdvogataOS</p>
